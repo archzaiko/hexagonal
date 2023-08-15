@@ -5,9 +5,7 @@
     "baseUrl": "./",
     "lib": ["ES7"],
     "paths": {
-      "@/model/*": ["src/components/core/model/*"],
-      "@/ports/*": ["src/components/core/ports/*"],
-      "@/core": ["src/components/core/public-api.ts"]
+      "@/core": ["src/core/public-api.ts"]
     }
   },
   "include": ["src/**/*"],
