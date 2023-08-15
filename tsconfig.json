@@ -5,7 +5,10 @@
     "baseUrl": "./",
     "lib": ["ES7"],
     "paths": {
-      "@/core": ["src/core/public-api.ts"]
+      "@model/*": ["src/core/model/*"],
+      "@persistence/*": ["src/core/persistence/*"],
+      "@authentication/*": ["src/core/authentication/*"],
+      "@core": ["src/core/public-api.ts"]
     }
   },
   "include": ["src/**/*"],

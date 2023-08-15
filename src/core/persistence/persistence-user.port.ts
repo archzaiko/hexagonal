@@ -1,6 +1,7 @@
-import { User } from '../model/user.model';
-import { EntityId } from '../model/entity.model';
+import { User } from '../authentication/models/user.model';
+import { EntityId } from '../base/entity.base';
 
 export interface PersistenceUserPort {
-  findUserById(id: EntityId): Promise<User>;
+  findById(id: EntityId): Promise<User | undefined>;
+  findByEmail(email: string): Promise<User | undefined>;
 }
