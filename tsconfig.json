@@ -1,9 +1,17 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "baseUrl": "./",
     "lib": ["ES7"],
+    "target": "ES2019",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "incremental": true,
+    "skipLibCheck": true,
     "paths": {
       "@model/*": ["src/core/model/*"],
       "@persistence/*": ["src/core/persistence/*"],
