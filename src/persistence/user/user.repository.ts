@@ -1,6 +1,7 @@
-import { EntityId } from '@/core';
+import { EntityId } from '@core';
 import { UserRecord } from './user.record';
 
 export interface UserRepository {
-  findUserById(id: EntityId): Promise<UserRecord>;
+  findOneById(id: EntityId): Promise<UserRecord>;
+  findOneByEmail(email: string): Promise<UserRecord>;
 }

@@ -1,7 +1,8 @@
 import { EntityId } from 'src/core/base/entity.base';
-import { Session } from 'src/core/authentication/models/session.model';
+import { Session } from 'src/core/auth/models/session';
+import { SessionStorage } from './session-storage';
 
-export class UserSessionStorage {
+export class DevSessionStorage implements SessionStorage {
   private readonly storage: Record<EntityId, Session> = {};
 
   get(id: EntityId): Session | undefined {

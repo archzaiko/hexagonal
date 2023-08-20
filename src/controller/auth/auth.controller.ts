@@ -1,17 +1,18 @@
-import { AuthenticationPort, Session } from '@core';
+import { AuthPort, Session } from '@core';
 
 import { LoginResponseDto } from './dto/login-response.dto';
 import { LogoutResponseDto } from './dto/logout-response.dto';
-import { EmailPasswordCredentialsDTO } from './dto/email-password-credentials.dto';
+import { BasicCredentialsDTO } from './dto/basic-credentials.dto';
 
 export class AuthController {
-  constructor(private readonly authenticationPort: AuthenticationPort) {}
+  constructor(private readonly authenticationPort: AuthPort) {}
 
   async loginByEmailAndPassword(): Promise<LoginResponseDto> {
-    const { email, password }: EmailPasswordCredentialsDTO =
-      new EmailPasswordCredentialsDTO({});
+    const { email, password }: BasicCredentialsDTO = new BasicCredentialsDTO(
+      {},
+    );
     const session: Session =
-      await this.authenticationPort.loginWithLocalStrategy({ email, password });
+      await this.authenticationPort.loginWithBasicStrategy({ email, password });
     return new LoginResponseDto(session);
   }
 

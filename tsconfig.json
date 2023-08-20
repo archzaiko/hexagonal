@@ -7,7 +7,7 @@
     "paths": {
       "@model/*": ["src/core/model/*"],
       "@persistence/*": ["src/core/persistence/*"],
-      "@authentication/*": ["src/core/authentication/*"],
+      "@authentication/*": ["src/core/auth/*"],
       "@core": ["src/core/public-api.ts"]
     }
   },

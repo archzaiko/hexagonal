@@ -1,8 +1,8 @@
 export { EntityId } from './base/entity.base';
-export { User } from './authentication/models/user.model';
-export { Session } from './authentication/models/session.model';
-export { Credentials } from './authentication/models/credentials/credentials';
+export { User } from './auth/models/user';
+export { Session } from './auth/models/session';
+export { Credentials } from './auth/credentials/credentials';
 
 // Ports
-export { AuthenticationPort } from './authentication/authentication.port';
-export { PersistenceUserPort } from './persistence/persistence-user.port';
+export { AuthPort } from './auth/auth.port';
+export { PersistenceUserPort } from './persistence/user/persistence-user.port';

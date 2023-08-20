@@ -1,4 +1,4 @@
-export class EmailPasswordCredentialsDTO {
+export class BasicCredentialsDTO {
   email: string;
   password: string;
 

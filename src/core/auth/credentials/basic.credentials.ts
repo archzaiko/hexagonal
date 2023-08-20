@@ -1,6 +1,6 @@
 import { Credentials } from './credentials';
 
-export interface LocalCredentials extends Credentials {
+export interface BasicCredentials extends Credentials {
   email: string;
   password: string;
 }

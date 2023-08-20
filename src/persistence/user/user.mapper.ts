@@ -1,8 +1,12 @@
-import { User } from '@/core';
+import { User } from '@core';
 import { UserRecord } from './user.record';
 
 export class UserMapper {
-  toDomain(_record: UserRecord): User {
-    return {} as User;
+  toDomain(record: UserRecord): User {
+    return record as User;
+  }
+
+  toPersistence(user: User): UserRecord {
+    return user as UserRecord;
   }
 }

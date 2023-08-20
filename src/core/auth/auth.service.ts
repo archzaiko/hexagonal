@@ -1,19 +1,18 @@
 import { Credentials, EntityId, Session } from '@core';
-import { AuthentificationStrategy } from './strategies/authentification-strategy';
-import { User } from 'src/core/authentication/models/user.model';
-import { SessionTokenGenerator } from './models/session-token-generator';
-import { UserSessionStorage } from './models/user-session-storage.model';
+import { AuthStrategy } from './strategies/auth-strategy';
+import { User } from 'src/core/auth/models/user';
+import { SessionTokenGenerator } from './session-token-generator';
+import { SessionStorage } from './session-storage';
 
-export class AuthenticationService {
-  private readonly sessionTokenGenerator: SessionTokenGenerator =
-    new SessionTokenGenerator();
-
-  private readonly userSessionStorage: UserSessionStorage =
-    new UserSessionStorage();
+export class AuthService {
+  constructor(
+    private readonly sessionTokenGenerator: SessionTokenGenerator,
+    private readonly userSessionStorage: SessionStorage,
+  ) {}
 
   async login(
     credentials: Credentials,
-    strategy: AuthentificationStrategy,
+    strategy: AuthStrategy,
   ): Promise<Session> {
     const user: User = await strategy.verify(credentials);
     return this.createUserSession(user);
